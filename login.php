@@ -10,14 +10,14 @@ if (!empty($_POST['username']) and !empty($_POST['userpassword'])) {
 
     if (!empty($user)) {
         $_SESSION['login'] = true;
-        $_SESSION['loginfailed'] = false;
+        $_SESSION['message'] = "Вы успешно вошли в свой аккаунт!";
         $_SESSION['Username'] = $user[0];
         $userr=$_SESSION['Username'];
         header("Location: index.php");
         die();
     } else {
         $_SESSION['login'] = false;
-        $_SESSION['loginfailed'] = true;
+        $_SESSION['message'] = "Неправильный логин/пароль";
         header("Location: index.php");
         die();
     }

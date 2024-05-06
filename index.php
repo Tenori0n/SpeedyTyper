@@ -12,8 +12,8 @@ require("dbconnect.php")
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/main.js" defer></script>
 </head>
-<body>
-    <header class="mainfont">
+<body style="display: flex; flex-direction: column">
+    <div class="mainfont header" style="width: 100%; height: max-content">
         <p class="sitename">SpeedyTyper - Игра про набор слов</p>
         <p class="sections">Таблица рекордов</p>
         <?php
@@ -34,8 +34,16 @@ require("dbconnect.php")
             echo('<div id="reg" class="reg" onclick="regvis(),loginnvis(),entering()">Регистрация/<br/>Вход</div>');
         }
         ?>
-
-    </header>
+    </div>
+        <?php
+        if (isset($_SESSION['message']))
+        {
+            echo('<div style="width: 100%; display: flex; justify-content: center;">');
+            echo("<p class='mainfont' style='color: red'>".$_SESSION['message']."</p>");
+            echo('</div>');
+            unset($_SESSION['message']);
+        }
+        ?>
     <div class="h4", id="h4">
         <div class="loginn" id="loginn">
             <form action="login.php" method="post">
@@ -71,16 +79,9 @@ require("dbconnect.php")
             </form>
         </div>
     </div>
-    <?php
-    if ($_SESSION['loginfailed'])
-    {
-        echo('<script type="text/javascript"> alert("Неправильный логин/пароль")</script>');
-        $_SESSION['loginfailed']=false;
-    }
-    ?>
-    <footer class="mainfont">
+    <div class="mainfont footer">
         <p class="contacts">Этот сайт был создан в 2024 году, как проект для учебной практики.
             Контактные данные: тел. 88005553535, эл. почта: ilovespeedtyping@mail.ru</p>
-    </footer>
+    </div>
 </body>
 </html>
