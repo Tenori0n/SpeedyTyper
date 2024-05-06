@@ -12,7 +12,7 @@ require("dbconnect.php")
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/main.js" defer></script>
 </head>
-<body style="display: flex; flex-direction: column">
+<body>
     <div class="mainfont header" style="width: 100%; height: max-content">
         <p class="sitename">SpeedyTyper - Игра про набор слов</p>
         <p class="sections">Таблица рекордов</p>
@@ -38,7 +38,7 @@ require("dbconnect.php")
         <?php
         if (isset($_SESSION['message']))
         {
-            echo('<div style="width: 100%; display: flex; justify-content: center;">');
+            echo('<div style="width: 100%; height: 30px; display: flex; justify-content: center;">');
             echo("<p class='mainfont' style='color: red'>".$_SESSION['message']."</p>");
             echo('</div>');
             unset($_SESSION['message']);
