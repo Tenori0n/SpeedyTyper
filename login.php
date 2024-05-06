@@ -3,6 +3,7 @@ require('dbconnect.php');
 if (!empty($_POST['username']) and !empty($_POST['userpassword'])) {
     $name = $_POST['username'];
     $password = $_POST['userpassword'];
+    setcookie('nickname', $_POST['username'], time()+60*60*24*3);
     $query = "SELECT \"Username\" FROM \"SiteBD\".\"Users\" WHERE \"Username\"='$name' AND \"Password\"='$password'";
     $result = pg_query(pg_connect("host=localhost port=5434 dbname=SpeedyTyper user=postgres password=goaway"), $query);
     $user = pg_fetch_array($result);

@@ -41,7 +41,7 @@ require("dbconnect.php")
             <form action="login.php" method="post">
                 <p>Вход</p>
                 <p>Имя пользователя</p>
-                <input name="username" id="username" type="text" pattern="[A-Za-z]{6,}[0-9]{1,}" required placeholder="Введите имя пользователя">
+                <input name="username" id="username" type="text" value="<?php if (isset($_COOKIE['nickname'])) echo($_COOKIE['nickname']); else echo(""); ?>"pattern="[A-Za-z]{6,}[0-9]{1,}" required placeholder="Введите имя пользователя">
                 <p>Пароль</p>
                 <input name="userpassword" id="userpassword" type="password" pattern="[A-Za-z]{6,}[0-9]{1,}" required placeholder="Введите пароль"><br><br>
                 <input type="submit" id="loginbut" class="regbut" onclick="hidereg()" value="Войти"></input>
