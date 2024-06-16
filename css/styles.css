@@ -115,12 +115,14 @@ h2{
     display:none;
     align-items: center;
     text-align: center;
+    z-index: 3;
+    position: absolute;
 }
 .h5{
     padding: 0;
     margin: 0;
     font-family: comfortaa;
-    z-index: 3;
+    z-index: 2;
     font-weight: 300;
     justify-content: center;
     position: relative;
@@ -198,6 +200,62 @@ h2{
     font-family: comfortaa;
     font-weight:bold;
     font-size: 20px;
+}
+.records{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.right-letter {
+    background-color: rgba(177, 255, 79, 0.4);
+    color: transparent;
+}
+
+.wrong-letter{
+    background-color: rgba(231, 84, 128, 0.4);
+    color: transparent;
+}
+
+.task
+{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    word-wrap:break-word;
+    position: relative;
+    z-index: -1;
+    height:400px;
+    font-family: Courier New, monospace;
+}
+
+.task p{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 0px;
+    margin: 0px;
+}
+
+.igra
+{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    word-wrap:break-word;
+    z-index: -2;
+    position: relative;
+    top:-400px;
+    font-family: Courier New, monospace;
+}
+
+.igra p{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 0px;
+    margin: 0px;
 }
 input[type=text]{
     padding: 0px;
