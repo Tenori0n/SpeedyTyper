@@ -1,5 +1,9 @@
 <?php
     session_start();
-    $_SESSION['recordpage']--;
-    header("Location:records.php");
+    if ($_SESSION['recordpage'] == 0)
+        header("Location:startrecord.php");
+    else {
+        $_SESSION['recordpage']--;
+        header("Location:index.php?page=record");
+    }
     die();

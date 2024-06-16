@@ -1,5 +1,5 @@
 <?php
     session_start();
     $_SESSION['recordpage']=0;
-    header("Location:records.php");
+    header("Location:index.php?page=record");
     die();
